@@ -1,0 +1,41 @@
+import math
+from tkinter import *
+from tkinter import messagebox
+
+def calc_del():
+  messagebox.showinfo("Результат",int(a.get())/int(b.get()))
+def calc_sum():
+   messagebox.showinfo("Результат",int(a.get())+int(b.get()))
+def calc_proiz():
+   messagebox.showinfo("Результат",int(a.get())*int(b.get()))
+def calc_minus():
+   messagebox.showinfo("Результат",int(a.get())-int(b.get()))
+def calc_deg():
+   messagebox.showinfo("Результат",int(a.get())**int(b.get()))
+def calc_sqrt():
+    messagebox.showinfo("Результат",math.sqrt(int(a.get())) or math.sqrt(int(b.get())))
+
+
+root=Tk()
+root.title('Приложение калькулятор')
+root.geometry('500x300')
+root['bg'] = 'misty rose'
+a=Entry(root , width=20 ,   bg='light goldenrod', fg='black', font='consolas')
+a.pack()
+b = Entry(root, width=20,  bg='light goldenrod', fg='black', font='consolas')
+b.pack()
+
+Button(root, text='-', width=10, height=2, bg='chocolate1',
+	 command=calc_minus).pack()
+Button(root, text='+', width=10, height=2, bg='chocolate1',
+	 command=calc_sum).pack()
+Button(root, text='*', width=10, height=2, bg='chocolate2',
+	 command=calc_proiz).pack()
+Button(root, text='/', width=10, height=2, bg='chocolate2',
+	 command=calc_del).pack()
+Button(root, text='Degree', width=10, height=2, bg='chocolate3',
+	 command=calc_deg).pack()
+Button(root, text='Square root', width=10, height=2, bg='chocolate3',
+	 command=calc_sqrt).pack()
+
+root.mainloop()
